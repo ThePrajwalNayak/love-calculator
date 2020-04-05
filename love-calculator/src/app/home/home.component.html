@@ -44,13 +44,11 @@
           </div>
         </div>
         <button [disabled]="!loveCalculatorForm.valid" [ngClass]="{'pointer-not-allowed' : !loveCalculatorForm.valid}"
-          type="submit" class="btn app-btn app-btn-primary center border">CALCULATE LOVE</button>
+          type="submit" class="btn app-btn app-btn-primary center border">CALCULATE!</button>
 
       </div>
       <div id="love-result" *ngIf="showLoveResult">
-      Love Between
-      <span class="highlight">{{firstName}} </span> and <span class="highlight">{{lastName}}</span> is <span class="highlight">{{finalScore}}%</span>
-
+      <span class="highlight">{{firstName}} </span> + <span class="highlight">{{lastName}}</span> = <span class="highlight">{{finalScore}}%</span>
       </div>
     </form>
     <!-- End Love Calculator Form -->

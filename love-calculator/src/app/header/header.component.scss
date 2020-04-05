@@ -3,6 +3,7 @@
     background-color: white;
     border-bottom: 2px solid rgb(217, 4, 114);;
     #logo{
+        color: rgb(53, 66, 74);
         display: inline-block;
         top: 15px;
         left: 25px;
@@ -20,6 +21,10 @@
         .third{
             margin-left: 2px;
             font-size: 24px;
+        }
+        &:hover{
+            color: rgb(53, 66, 74);
+            text-decoration: none;
         }
     }
 }

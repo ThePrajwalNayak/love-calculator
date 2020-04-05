@@ -1,5 +1,5 @@
 #home {
-  height: 85vh;
+  height: 82vh;
   background-color: rgb(240, 234, 237);
 
   // background-color: rgb(217, 4, 114);
@@ -83,7 +83,7 @@
 
         .app-btn {
           cursor: pointer !important;
-          background: orange;
+          
           display: block;
           padding: 10px;
           text-align: center;
@@ -92,6 +92,7 @@
         .app-btn-primary {
           color: white !important;
           background-color: rgb(217, 4, 114);
+          // background-color:  rgb(53, 66, 74);;
         }
 
         .center {

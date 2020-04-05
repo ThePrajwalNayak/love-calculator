@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: 'loveCalculator', component: HomeComponent },
-  { path: '', redirectTo: '/loveCalculator', pathMatch: 'full'},
+  { path: 'coupleCalculator', component: HomeComponent },
+  { path: '', redirectTo: '/coupleCalculator', pathMatch: 'full'},
   { path: '**', component: HomeComponent }
 ];
 

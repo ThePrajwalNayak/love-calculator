@@ -1,4 +1,12 @@
 #footer{
-    height: 5vh;
+    height: 8vh;
     background-color: rgb(53, 66, 74);
+    a {
+        color: white;
+        margin-left: 5px;
+        &:hover{
+            color: white;
+            text-decoration: none;
+        }
+    }
 }
