@@ -1,19 +1,26 @@
 #home {
-
+   
   #love-calculator-wrapper {
+    
+    
+    border: 1px solid red;
+    height: 600px;
+    
     #love-calculator-form {
+        
       width: 40%;
-      height: 400px;
+      height: 500px;
       color: white;
       background: yellow;
       position: absolute;
-      top: 50%;
+      top: 300px;
       left: 50%;
       -ms-transform: translateX(-50%) translateY(-50%);
       -webkit-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
 
       #heart-wrapper {
+          
         position: absolute;
         top: 50%;
         left: 50%;
@@ -86,6 +93,16 @@
 
       }
 
+      #love-result{
+          text-align: center;
+          position: absolute;
+          bottom: 20px;
+          left: 0;
+          text-align: center;
+          p{
+             text-align: center;
+          }
+      }
 
 
     }

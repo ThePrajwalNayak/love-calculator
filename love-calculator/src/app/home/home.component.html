@@ -1,11 +1,12 @@
 <div id="home">
 
   <div id="love-calculator-wrapper">
-    
-    <!--Start Love Calculator Form-->
-    <form id="love-calculator-form" [formGroup]='loveCalculatorForm' (ngSubmit)="calculateLovePercentage(loveCalculatorForm)">
 
-    <div id="heart-wrapper">
+    <!--Start Love Calculator Form-->
+    <form id="love-calculator-form" [formGroup]='loveCalculatorForm'
+      (ngSubmit)="calculateLovePercentage(loveCalculatorForm)">
+
+      <div id="heart-wrapper">
         <svg class="heart" viewBox="0 0 32 29.6">
           <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
         c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" />
@@ -15,7 +16,7 @@
         <div class="row">
           <div class="col-md-6">
             <input formControlName="yourName" id="yourName" class="form-control item" type="text" name="yourName"
-              placeholder="Your Name">
+              placeholder="Your Name" maxlength="20">
             <div class="error-message-wrapper"
               *ngIf="loveCalculatorForm.controls['yourName'].touched && !loveCalculatorForm.controls['yourName'].valid">
               <span class="error-message" *ngIf="loveCalculatorForm.controls['yourName'].hasError('required')">
@@ -29,7 +30,7 @@
           </div>
           <div class="col-md-6">
             <input formControlName="crushName" id="crushName" class="form-control item" type="text" name="crushName"
-              placeholder="Crush Name">
+              placeholder="Crush Name" maxlength="20">
             <div class="error-message-wrapper"
               *ngIf="loveCalculatorForm.controls['crushName'].touched && !loveCalculatorForm.controls['crushName'].valid">
               <span class="error-message" *ngIf="loveCalculatorForm.controls['crushName'].hasError('required')">
@@ -42,11 +43,16 @@
             </div>
           </div>
         </div>
-          <button [disabled]="!loveCalculatorForm.valid"
-            [ngClass]="{'pointer-not-allowed' : !loveCalculatorForm.valid}" type="submit"
-            class="btn app-btn app-btn-primary center">Calculate Love</button>
-        </div>
+        <button [disabled]="!loveCalculatorForm.valid" [ngClass]="{'pointer-not-allowed' : !loveCalculatorForm.valid}"
+          type="submit" class="btn app-btn app-btn-primary center">CALCULATE LOVE</button>
 
+      </div>
+      <div id="love-result" *ngIf="showLoveResult">
+
+        <p>Love beteen {{firstName}} and {{lastName}} is {{finalScore}}%
+        </p>
+
+      </div>
     </form>
     <!-- End Love Calculator Form -->
 

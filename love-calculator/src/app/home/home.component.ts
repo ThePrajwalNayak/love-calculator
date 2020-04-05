@@ -21,6 +21,11 @@ export class HomeComponent implements OnInit {
     nameMaxLength: 20
   }
 
+  showLoveResult : boolean = false;
+  firstName : string;
+  lastName : String;
+  finalScore : any;
+
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
@@ -38,11 +43,37 @@ export class HomeComponent implements OnInit {
   calculateLovePercentage(loveForm) {
     if (loveForm.status === 'VALID') {
       var form = loveForm;
-      var reqObj = {
-        fullname: form.get('yourName').value,
-        email: form.get('crushName').value
-      };
+        var yourName = this.trimAll(form.get('yourName').value);
+        var crushName =  this.trimAll(form.get('crushName').value);
+
+        this.firstName = yourName;
+        this.lastName = crushName;
+
+        yourName= yourName.toLowerCase();
+        crushName= crushName.toLowerCase();
+        var totalNum= this.getNum(yourName) * this. getNum(crushName);
+
+        this.initLoveCalculatorForm();
+
+        this.showLoveResult = true;
+        this.finalScore = totalNum % 100;
+
+
     }
+  }
+
+
+
+  trimAll(name) {
+    while (name.substring(0, 1) == " ") { name = name.substring(1, name.length) }
+    while (name.substring(name.length - 1, name.length) == " ") { name = name.substring(0, name.length - 1) }
+    return name;
+  }
+
+  getNum(name) {
+    var outputNum = 0;
+    for (var i = 0; i < name.length; i++) { outputNum += name.charCodeAt(i) }
+    return outputNum;
   }
 
 }
