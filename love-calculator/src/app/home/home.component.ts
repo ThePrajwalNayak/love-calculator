@@ -21,10 +21,10 @@ export class HomeComponent implements OnInit {
     nameMaxLength: 20
   }
 
-  showLoveResult : boolean = false;
-  firstName : string;
-  lastName : String;
-  finalScore : any;
+  showLoveResult : boolean = true;
+  firstName : string = "Raj";
+  lastName : String = "Roja"
+  finalScore : any = 74;
 
   constructor(private formBuilder: FormBuilder) { }
 

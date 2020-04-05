@@ -7,11 +7,12 @@
 
 
     // border: 1px solid red;
-    height: 600px;
+    // height: 600px;
 
     #love-calculator-form {
 
-      width: 40%;
+      width: 50%;
+      border : 1px solid;
       // height: 500px;
       color: white;
       position: absolute;
@@ -110,7 +111,7 @@
 
       #love-result {
         position: absolute;
-        bottom: -280px;
+        bottom: -250px;
         left: 0;
         color: rgb(53, 66, 74);
         text-transform: capitalize;
