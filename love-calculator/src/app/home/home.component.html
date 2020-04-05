@@ -1,48 +1,54 @@
 <div id="home">
-  Home
+
   <div id="love-calculator-wrapper">
-    <form id="love-calculator-form" [formGroup]='loveCalculatorForm' (ngSubmit)="createContact(contactForm)">
-      <div id="heart-wrapper">
+    
+    <!--Start Love Calculator Form-->
+    <form id="love-calculator-form" [formGroup]='loveCalculatorForm' (ngSubmit)="calculateLovePercentage(loveCalculatorForm)">
+
+    <div id="heart-wrapper">
         <svg class="heart" viewBox="0 0 32 29.6">
           <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
         c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" />
         </svg>
       </div>
-      <div>
-        <div class="margin-bottom-one">
-          <input formControlName="yourName" id="yourName" class="form-control item" type="text" name="yourName"
-            placeholder="Your Name">
-          <div class="error-message-wrapper"
-            *ngIf="contactForm.controls['yourName'].touched && !contactForm.controls['yourName'].valid">
-            <span class="error-message" *ngIf="contactForm.controls['yourName'].hasError('required')">
-              {{errorMessage.required}}</span>
-            <span class="error-message" *ngIf="contactForm.controls['yourName'].hasError('minlength')">
-              {{errorMessage.minlength}} {{validation.nameMinLength}}</span>
-            <span class="error-message"
-              *ngIf="contactForm.controls['yourName'].hasError('maxlength')">{{errorMessage.maxLength}}
-              {{validation.nameMaxLength}}</span>
+      <div id="love-calculator-form-input">
+        <div class="row">
+          <div class="col-md-6">
+            <input formControlName="yourName" id="yourName" class="form-control item" type="text" name="yourName"
+              placeholder="Your Name">
+            <div class="error-message-wrapper"
+              *ngIf="loveCalculatorForm.controls['yourName'].touched && !loveCalculatorForm.controls['yourName'].valid">
+              <span class="error-message" *ngIf="loveCalculatorForm.controls['yourName'].hasError('required')">
+                {{errorMessage.required}}</span>
+              <span class="error-message" *ngIf="loveCalculatorForm.controls['yourName'].hasError('minlength')">
+                {{errorMessage.minlength}} {{validation.nameMinLength}}</span>
+              <span class="error-message"
+                *ngIf="loveCalculatorForm.controls['yourName'].hasError('maxlength')">{{errorMessage.maxLength}}
+                {{validation.nameMaxLength}}</span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <input formControlName="crushName" id="crushName" class="form-control item" type="text" name="crushName"
+              placeholder="Crush Name">
+            <div class="error-message-wrapper"
+              *ngIf="loveCalculatorForm.controls['crushName'].touched && !loveCalculatorForm.controls['crushName'].valid">
+              <span class="error-message" *ngIf="loveCalculatorForm.controls['crushName'].hasError('required')">
+                {{errorMessage.required}}</span>
+              <span class="error-message" *ngIf="loveCalculatorForm.controls['crushName'].hasError('minlength')">
+                {{errorMessage.minlength}} {{validation.nameMinLength}}</span>
+              <span class="error-message"
+                *ngIf="loveCalculatorForm.controls['crushName'].hasError('maxlength')">{{errorMessage.maxLength}}
+                {{validation.nameMaxLength}}</span>
+            </div>
           </div>
         </div>
-        <div class="margin-bottom-one">
-          <input formControlName="crushName" id="crushName" class="form-control item" type="text" name="crushName"
-            placeholder="Crush Name">
-          <div class="error-message-wrapper"
-            *ngIf="contactForm.controls['crushName'].touched && !contactForm.controls['crushName'].valid">
-            <span class="error-message" *ngIf="contactForm.controls['crushName'].hasError('required')">
-              {{errorMessage.required}}</span>
-            <span class="error-message" *ngIf="contactForm.controls['crushName'].hasError('minlength')">
-              {{errorMessage.minlength}} {{validation.nameMinLength}}</span>
-            <span class="error-message"
-              *ngIf="contactForm.controls['crushName'].hasError('maxlength')">{{errorMessage.maxLength}}
-              {{validation.nameMaxLength}}</span>
-          </div>
+          <button [disabled]="!loveCalculatorForm.valid"
+            [ngClass]="{'pointer-not-allowed' : !loveCalculatorForm.valid}" type="submit"
+            class="btn app-btn app-btn-primary center">Calculate Love</button>
         </div>
-        <div class="">
-          <button [disabled]="!loveCalculatorForm.valid" [ngClass]="{'pointer-not-allowed' : !loveCalculatorForm.valid}"
-            type="submit" class="btn app-btn app-btn-primary btn-block">Calculate Love</button>
-        </div>
-      </div>
+
     </form>
+    <!-- End Love Calculator Form -->
 
   </div>
 
